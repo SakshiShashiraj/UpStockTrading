@@ -15,6 +15,7 @@ public class StockTrading2Application {
 		Stock Nvidia = new Stock("Nvidia", 50, 200);
 		John.buy(Nvidia, 10);
 		System.out.println(John.generateStatement());
+		System.out.println(Nvidia.toString());
 	}
 
 }

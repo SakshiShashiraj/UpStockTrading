@@ -76,6 +76,7 @@ public class Customer {
         else {
             this.balance = this.balance - totalCost;
             this.holdings = this.holdings + totalCost;
+            st.setQuantity(st.getQuantity() - quant);
             if(list.containsKey(st)){
                 list.replace(st, quant);
             }
@@ -83,6 +84,7 @@ public class Customer {
                 list.put(st, quant);
             }
         }
+
     }
 
     public void addFunds(int bal){
@@ -102,10 +104,12 @@ public class Customer {
             }
             else if (quant == list.get(st)){
                 list.remove(st);
+                st.setQuantity(st.getQuantity() + quant);
             }
             else {
                 int currValue = list.get(st);
                 list.replace(st, currValue - quant);
+                st.setQuantity(st.getQuantity() + quant);
             }
         }
     }
