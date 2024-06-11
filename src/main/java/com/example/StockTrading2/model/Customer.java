@@ -108,6 +108,5 @@ public class Customer {
                 list.replace(st, currValue - quant);
             }
         }
-
     }
 }
